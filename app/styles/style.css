@@ -1,5 +1,7 @@
 h1 {
 	font-family: 'Bangers', cursive;
+	font-size: 3rem;
+	padding-bottom: 1rem;
 }
 
 h2, h3, h4, h5, h6, p, a {
@@ -17,4 +19,20 @@ a {
 
 a:hover {
 	color: #000000;
+}
+
+.button {
+	background-color: white;
+	border-radius: 5px;
+	padding: 1rem;
+}
+/*
+.footer {
+	place at bottom
+}*/
+
+.timer {
+	background-color: white;
+	border-radius: 5px;
+	padding: 2rem;
 }
