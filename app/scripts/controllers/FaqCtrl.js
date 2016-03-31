@@ -1,5 +1,6 @@
 (function() {
 	function FaqCtrl() {
+		$('.timer').hide();
 	}
 
 	angular

@@ -12,6 +12,12 @@ html {
 	background-color: #F9F9F9;
 }
 
+.container {
+	width: 800px;
+	position: relative;
+	margin: 0 auto;
+}
+
 a {
 	color: #555555;
 	text-decoration: none;
@@ -21,18 +27,43 @@ a:hover {
 	color: #000000;
 }
 
+.footer {
+	margin: 1rem;
+}
+
+#main-timer {
+	background-color: white;
+	border-radius: 5px;
+	padding: 1rem;
+	margin-bottom: 10px;
+}
+
+.choice {
+	padding-top: 10px;
+}
+
+.navigation ul {
+	margin-left: 0;
+	padding-left: 0;
+	float: right;
+}
+
+.navigation li {
+	display: inline-block;
+	list-style: none;
+}
+
+#mid-li {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+
 .button {
 	background-color: white;
 	border-radius: 5px;
 	padding: 1rem;
-}
-/*
-.footer {
-	place at bottom
-}*/
-
-.timer {
-	background-color: white;
-	border-radius: 5px;
-	padding: 2rem;
+	margin-right: .5rem;
+	margin-top: .5rem;
+	width: 100px;
 }
