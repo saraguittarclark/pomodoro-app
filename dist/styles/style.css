@@ -4,7 +4,7 @@ h1 {
 	padding-bottom: 1rem;
 }
 
-h2, h3, h4, h5, h6, p, a {
+h2, h3, h4, h5, h6, p, a, .button {
 	font-family: 'Open Sans', sans-serif;
 }
 

@@ -1,54 +1,51 @@
 (function() {
-	function TimerCtrl($scope, $timeout, $filter) {
-		//DEMO TIME AMOUNT
-		$scope.minutes = 24;
-		$scope.seconds = 59;
+	function TimerCtrl($scope, $interval, $filter) {
 
-		$scope.time = 25;
-		var countdown;
+		var regularTimer = 60 * 25; // 60s * 25m
+		var shortBreakTimer = 60 * 5; // 60s * 5m
+		var longBreakTimer = 60 * 30; // 60s * 30 m
+		$('#reset-button').hide();
+
+		var pomodoros = 0;
+		//when at 4 -> long break timer
+
+		$scope.time = regularTimer;
+		var countdown = null;
 
 		$scope.start = function() {
+			if (countdown !== null) {
+				return;
+			}
+
 			if ($scope.time !==0) {
-				countdown = $timeout(function() {
+				countdown = $interval(function() {
 					$scope.time--;
 					if ($scope.time === 0) {
 						$scope.stop();
 					};
-				$scope.start();
 				}, 1000);
-			} 
-			//reset will do this
-			else {
-				$scope.time = 25;
-				$scope.start();
 			};
+
+			$('#start-button').hide();
+			$('#reset-button').show();
+
 		};
 
 		$scope.reset = function() {
-			if (countdown !== undefined) {
+			if (countdown !== null) {
 				$scope.stop();
-				//DEMO TIME AMOUNT
-				$scope.time = 25;
-				$scope.start();
-			} else {
-				//functional
-				$scope.time = 25;
-				$scope.start();
-			}
-			//visible ONLY after start button is hidden
+			} 
+			$scope.time = 60 * 25;
+			$scope.start();
 		};
 
-		//convert seconds to minutes/seconds
-		//make sound at 0
-		//figure out button text
-		//fix double click issue on button - show/hide
-
 		$scope.stop = function() {
-			$timeout.stop(countdown);
+			$interval.cancel(countdown);
+			countdown = null;
 		};
 	}
 
 	angular
 		.module('app')
-		.controller('TimerCtrl', ['$scope', '$timeout', '$filter', TimerCtrl]);
+		.controller('TimerCtrl', ['$scope', '$interval', '$filter', TimerCtrl]);
 })();

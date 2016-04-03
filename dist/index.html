@@ -21,7 +21,7 @@
 	
 	<section class="timer" ng-controller="TimerCtrl">
 		<div id="main-timer">
-			<p>{{ time }}</p>
+			<p>{{ time | timecode }}</p>
 		</div>
 		<div class="button" id="start-button" ng-click="start()">Start</div>
 		<div class="button" id="reset-button" ng-click="reset()">Reset</div>
@@ -33,7 +33,7 @@
 	<!--JQuery-->
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<!-- AngularJS -->
-	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.js"></script>
 	<!--UI Router-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
 	<!-- Firebase -->
@@ -46,5 +46,6 @@
     <script src="/scripts/controllers/StartCtrl.js"></script>
     <script src="/scripts/controllers/FaqCtrl.js"></script>
     <script src="/scripts/controllers/TimerCtrl.js"></script>
+    <script src="/scripts/filters/timecode.js"></script>
 </body>
 </html>
