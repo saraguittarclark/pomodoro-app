@@ -4,7 +4,12 @@
 		var regularTimer = 60 * 25; // 60s * 25m
 		var shortBreakTimer = 60 * 5; // 60s * 5m
 		var longBreakTimer = 60 * 30; // 60s * 30 m
-		$('#reset-button').hide();
+		var resetButton = $('#reset-button');
+		var startButton = $('#start-button');
+		var breakButton = $('#break-button');
+
+		resetButton.hide();
+		breakButton.hide();
 
 		var pomodoros = 0;
 		//when at 4 -> long break timer
@@ -26,22 +31,54 @@
 				}, 1000);
 			};
 
-			$('#start-button').hide();
-			$('#reset-button').show();
+			startButton.hide();
+			resetButton.show();
+			breakButton.show();
 
+			pomodoros++;
 		};
 
 		$scope.reset = function() {
+			breakButton.hide();
 			if (countdown !== null) {
 				$scope.stop();
 			} 
 			$scope.time = 60 * 25;
 			$scope.start();
+
+			pomodoros++;
 		};
 
 		$scope.stop = function() {
 			$interval.cancel(countdown);
 			countdown = null;
+		};
+
+
+
+		// var breakTimer = function () {
+		// 	if (regularTimer === 0) {
+		// 		resetButton.hide();
+		// 		breakButton.show();
+		// 	};
+		// };
+	
+		//on session finish, add 1 to pomodoros 
+		//when pomodoros === 4 
+		//
+
+		$scope.break = function() {
+			if (pomodoros < 4) {
+				$scope.time = shortBreakTimer;
+				$scope.start();
+				breakButton.hide();
+			} else if (pomodoros >= 4) {
+				$scope.time = longBreakTimer;
+				$scope.start();
+				breakButton.hide();
+				pomodoros = 0;
+				startButton.show();
+			}
 		};
 	}
 

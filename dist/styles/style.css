@@ -51,13 +51,8 @@ a:hover {
 .navigation li {
 	display: inline-block;
 	list-style: none;
+	padding-right: 10px;
 }
-
-#mid-li {
-	padding-left: 1rem;
-	padding-right: 1rem;
-}
-
 
 .button {
 	background-color: white;
@@ -65,5 +60,9 @@ a:hover {
 	padding: 1rem;
 	margin-right: .5rem;
 	margin-top: .5rem;
-	width: 100px;
+	width: 200px;
+}
+
+.timer .button {
+	display: inline-block;
 }

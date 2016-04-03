@@ -11,9 +11,8 @@
 <body class="container">
 	<section class="navigation">
 		<ul class>
-			<li><a ui-sref="start">Get Working!</a></li>
-			<li><a ui-sref="break" id="mid-li">Break</a></li>
-			<li><a ui-sref="faq">FAQ</a>
+			<li><a ui-sref="start">Get Working</a></li>
+			<li><a ui-sref="faq">FAQ</a></li>
 		</ul>
 	</section>
 
@@ -23,8 +22,9 @@
 		<div id="main-timer">
 			<p>{{ time | timecode }}</p>
 		</div>
-		<div class="button" id="start-button" ng-click="start()">Start</div>
-		<div class="button" id="reset-button" ng-click="reset()">Reset</div>
+		<div class="button" id="start-button" ng-click="start()">Start Work Session</div>
+		<div class="button" id="reset-button" ng-click="reset()">Restart Work Session</div>
+		<div class="button" id="break-button" ng-click="break()">Break</div>
 
 	</section>
 
