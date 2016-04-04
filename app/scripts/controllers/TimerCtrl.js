@@ -54,19 +54,6 @@
 			countdown = null;
 		};
 
-
-
-		// var breakTimer = function () {
-		// 	if (regularTimer === 0) {
-		// 		resetButton.hide();
-		// 		breakButton.show();
-		// 	};
-		// };
-	
-		//on session finish, add 1 to pomodoros 
-		//when pomodoros === 4 
-		//
-
 		$scope.break = function() {
 			if (pomodoros < 4) {
 				$scope.time = shortBreakTimer;

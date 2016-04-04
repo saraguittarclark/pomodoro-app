@@ -1,22 +1,52 @@
+
+/*Fonts*/
 h1 {
 	font-family: 'Bangers', cursive;
 	font-size: 3rem;
-	padding-bottom: 1rem;
+	/*padding-bottom: 1rem;*/
 }
 
 h2, h3, h4, h5, h6, p, a, .button {
 	font-family: 'Open Sans', sans-serif;
 }
 
+/*Backgrounds*/
+
 html {
 	background-color: #F9F9F9;
 }
 
-.container {
-	width: 800px;
+html, body {
+	height: 100%;
+}
+
+.tall {
+	width: 70%;
 	position: relative;
 	margin: 0 auto;
 }
+
+.container {
+	background-color: #E1EAE3;
+	/*height: 100%;*/
+	padding: 1rem;
+}
+
+.half {
+	display: inline-block;
+	width: 48%;
+}
+
+.choice {
+	height: 100%;
+}
+
+.float-right {
+	float: right;
+	padding-top: 10px;
+}
+
+/*Links*/
 
 a {
 	color: #555555;
@@ -27,9 +57,7 @@ a:hover {
 	color: #000000;
 }
 
-.footer {
-	margin: 1rem;
-}
+/*Timer*/
 
 #main-timer {
 	background-color: white;
@@ -38,14 +66,23 @@ a:hover {
 	margin-bottom: 10px;
 }
 
+#timer-time {
+	font-size: 2rem;
+	text-align: center;
+}
+
+/*start input padding*/
+
 .choice {
 	padding-top: 10px;
 }
 
+/*Nav buttons*/
+
 .navigation ul {
 	margin-left: 0;
 	padding-left: 0;
-	float: right;
+/*	float: right;*/
 }
 
 .navigation li {
@@ -54,15 +91,86 @@ a:hover {
 	padding-right: 10px;
 }
 
+/*Timer && buttons*/
+.timer {
+	margin: 0 auto;
+	width: 80%;
+}
+
 .button {
 	background-color: white;
 	border-radius: 5px;
+	display: inline-block;
+	font-size: .75rem;
 	padding: 1rem;
-	margin-right: .5rem;
+	margin: 0 auto;
 	margin-top: .5rem;
-	width: 200px;
+	text-align: center;
+	width: 43%;
 }
+
+#reset-button {
+	margin-right: 15px;
+}
+
+/*.change-state-buttons {
+	padding-left: 0;
+}
+
+.change-state-buttons li {
+	display: inline-block;
+	list-style-type: none;
+	width: 33%;
+}*/
+
 
 .timer .button {
 	display: inline-block;
 }
+
+/*Progress color*/
+.progress {
+	background-color: #F8EFD7;
+} 
+
+/*break color*/
+.break {
+	background-color: #E9D8D6;
+}
+
+/*FIX MEDIA QUERIES*/
+@media (max-width: 800px) {
+	.half {
+		display: block;
+		width: 100%;
+	}
+
+	h1 {
+		margin-bottom: .5rem;
+	}
+
+	.float-right {
+		display: block;
+		float: left;
+		padding-left: 0;
+		margin-top: 0;
+	}
+
+	.navigation {
+		display: block;
+	}
+
+	.timer {
+		margin: 0 auto;
+		margin-top: 3em;
+	}
+}
+
+@media (max-width: 1105px) {
+	.button {
+		margin: 0 auto;
+		margin-bottom: .25em;
+		width: 93%;
+	}
+}
+

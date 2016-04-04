@@ -8,27 +8,38 @@
     <link rel="stylesheet" href="/styles/style.css"/>
     <link rel="icon" type="image/png" href="/assets/images/three.png"/>
 </head>
-<body class="container">
-	<section class="navigation">
-		<ul class>
-			<li><a ui-sref="start">Get Working</a></li>
-			<li><a ui-sref="faq">FAQ</a></li>
-		</ul>
-	</section>
-
-	<h1>Get It Done</h1>
-	
-	<section class="timer" ng-controller="TimerCtrl">
-		<div id="main-timer">
-			<p>{{ time | timecode }}</p>
+<body class="tall">
+	<div class="container">
+		<!-- <div class="container"> -->
+		<div class="half">
+			<h1>Get It Done</h1>
 		</div>
-		<div class="button" id="start-button" ng-click="start()">Start Work Session</div>
-		<div class="button" id="reset-button" ng-click="reset()">Restart Work Session</div>
-		<div class="button" id="break-button" ng-click="break()">Break</div>
 
-	</section>
+		<div class="half">
+			<ul class="navigation float-right">
+				<li><a ui-sref="start">Get Working</a></li>
+				<li><a ui-sref="faq">FAQ</a></li>
+			</ul>
+		</div><!--/half-->
+		
 
-	<ui-view></ui-view>
+		<section class="timer">
+			<div ng-controller="TimerCtrl">
+				<div id="main-timer">
+					<p id="timer-time">{{ time | timecode }}</p>
+				</div>
+				<!-- <ul class="change-state-buttons"> -->
+					<div class="button" id="start-button" ng-click="start()">Start Session</div>
+					<div class="button" id="reset-button" ng-click="reset()">Restart Session</div>
+					<div class="button" id="break-button" ng-click="break()">Break</div>
+				<!-- </ul> -->
+			</div>
+		</section>
+
+		<!-- move buttons in main timer ? for formatting-->
+
+		<ui-view></ui-view>
+	</div><!--/container-->
 
 	<!--JQuery-->
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
