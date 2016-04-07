@@ -10,6 +10,7 @@
 </head>
 <body class="tall">
 	<div class="container">
+		<!-- ng-class="{ onBreak, finishedSession }" -->
 		<!-- <div class="container"> -->
 		<div class="half">
 			<h1>Get It Done</h1>
@@ -27,18 +28,28 @@
 			<div ng-controller="TimerCtrl">
 				<div id="main-timer">
 					<p id="timer-time">{{ time | timecode }}</p>
+					<div class="button half" id="start-button" ng-click="start()">Start Session</div>
+					<div class="button half float-right" id="break-button" ng-click="break()">Break</div>
 				</div>
-				<!-- <ul class="change-state-buttons"> -->
-					<div class="button" id="start-button" ng-click="start()">Start Session</div>
-					<div class="button" id="reset-button" ng-click="reset()">Restart Session</div>
-					<div class="button" id="break-button" ng-click="break()">Break</div>
-				<!-- </ul> -->
+				<section class="images">
+			<!-- <div ng-controller="ImageCtrl"> -->
+					<img id="Jan" class="done-pic" src="/assets/images/jansteen.png"/>
+					<img id="Parrot" class="done-pic" src="/assets/images/parrotportrait.png"/>
+					<p id="motivation">{{ motivation }}</p>
+					<img id="Rembrandt" class="on-break-pic" src="/assets/images/rembrandt.png"/>
+					<img id="VanGogh" class="on-break-pic" src="/assets/images/vangogh.png"/>
+					<img id="Leyster" class="on-break-pic" src="/assets/images/judithleyster.png"/>
+					<p id="artist-quote">{{ quote }}</p>
+					<!-- </div> -->
+				</section>
 			</div>
 		</section>
-
 		<!-- move buttons in main timer ? for formatting-->
 
 		<ui-view></ui-view>
+
+
+		
 	</div><!--/container-->
 
 	<!--JQuery-->
@@ -57,6 +68,8 @@
     <script src="/scripts/controllers/StartCtrl.js"></script>
     <script src="/scripts/controllers/FaqCtrl.js"></script>
     <script src="/scripts/controllers/TimerCtrl.js"></script>
+    <!-- <script src="/scripts/controllers/ImageCtrl.js"></script> -->
+    <!-- <script src="/scripts/Tasks.js"></script> -->
     <script src="/scripts/filters/timecode.js"></script>
 </body>
 </html>

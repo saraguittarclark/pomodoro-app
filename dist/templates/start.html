@@ -1,9 +1,17 @@
 
 <div class="choice">
 	<form>
-		<p>I am working on: <input type="text" name="task" placeholder="building a timer"></input></p>
+		<p>I am working on: <input type="text" ng-model="task" name="task" placeholder="building a timer"></input> <a class="add-button float-right" ng-click="add()">Add Task</a> </p>
+		
 		<!--TO FIREBASE?-->
 	</form>
+	<div>
+		<ul id="task-list" class="tasks-completed">
+		  <li ng-repeat="task in tasks">
+		    {{ task }}
+		  </li>
+		</ul>
+	</div>
 </div>
 
 
