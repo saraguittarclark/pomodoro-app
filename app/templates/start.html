@@ -1,14 +1,14 @@
 
 <div class="choice">
 	<form>
-		<p>I am working on: <input type="text" ng-model="task" name="task" placeholder="building a timer"></input> <a class="add-button float-right" ng-click="add()">Add Task</a> </p>
-		
-		<!--TO FIREBASE?-->
+		<p>I am working on: <input type="text" ng-model="task" name="task" placeholder="building a timer"></input>
+		<a class="add-button float-right" ng-click="Tasks.add()">Add Task</a>
+		</p> 
 	</form>
 	<div>
+		<p>My current task is ... {{ task }}</p>
 		<ul id="task-list" class="tasks-completed">
 		  <li ng-repeat="task in tasks">
-		    {{ task }}
 		  </li>
 		</ul>
 	</div>

@@ -1,10 +1,13 @@
 (function() {
 	function TimerCtrl($scope, $interval, $filter) {
 
-		var regularTimer = 60 * .05; // 60s * 25m
-		var shortBreakTimer = 60 * .05; // 60s * 5m
-		var longBreakTimer = 60 * 0.1; // 60s * 30 m
+		var regularTimer = 60 * .1; // 60s * 25m
+		var shortBreakTimer = 60 * .1; // 60s * 5m
+		var longBreakTimer = 60 * .2; // 60s * 30 m
 		var pomodorosPerLongBreak = 4; //4
+
+		var motivation = "";
+		var quote = "";
 
 		var startButton = $('#start-button');
 		var breakButton = $('#break-button');
@@ -12,8 +15,21 @@
 
 		var picturesDone = $('.done-pic'); // array-list of DOM class
 		var picturesBreak = $('.on-break-pic'); //array-list of DOM class
-		console.log(picturesDone instanceof HTMLCollection);
-		console.log(picturesDone instanceof NodeList);
+
+		var breakImageIndex = 0;
+		var doneImageIndex = 0;
+
+		var breakQuotes = [ 
+			"Rembrandt van Rijn is cheering for you.",
+			"Vincent van Gogh is judging you. Silently.",
+			"Judith Leyster wants you to keep it up!"
+		];
+
+		var motivationQuotes = [
+			"Hooray!",
+			"Great Job!"
+		];
+			//two-way bind images instead?
 
 		picturesDone.hide(); // hide all pictures on load
 		picturesBreak.hide(); // hide all pictures on load
@@ -51,15 +67,29 @@
 					breakButton.show();
 					pomodoros++;
 					$('.container').addClass('finished');
-					//TODO show success image
-					picturesDone.show();
+
+					picturesDone.eq(doneImageIndex).show();
+					$scope.motivation = motivationQuotes[doneImageIndex];
+
+					doneImageIndex++;
+
+					console.log(doneImageIndex);
+
+					if (doneImageIndex >= picturesDone.length) {
+						doneImageIndex = 0;
+					};
+
+
 				}
 
 			};
 		}
 
 		$scope.start = function() {
+			$scope.motivation = "";
+			$scope.quote = "";
 			$('.container').removeClass('onBreak');
+			$('.container').removeClass('finished');
 			picturesDone.hide();
 			picturesBreak.hide();
 
@@ -86,13 +116,13 @@
 		**/
 
 		$scope.break = function() {
+			$scope.motivation = "";
 			$('.container').removeClass('finished');
 			$('.container').addClass('onBreak');
 			onBreak = true;
 
 			//TODO show watchy image
 			picturesDone.hide();
-			picturesBreak.show();
 			if (pomodoros < pomodorosPerLongBreak) {
 				$scope.time = shortBreakTimer;
 			} else {
@@ -102,18 +132,16 @@
 			countdown = $interval(tickFunction, 1000);
 			startButton.hide();
 			breakButton.hide();
-		};
 
-		var imageCycle = function(list) {
-			list.hide();
-			for (var i = 0; i < list.length; i++) {
-				var image = list[i];
-				image.show();
+			picturesBreak.eq(breakImageIndex).show();
+			$scope.quote = breakQuotes[breakImageIndex];
+
+			breakImageIndex++;
+			if (breakImageIndex >= picturesBreak.length) {
+				breakImageIndex = 0;
 			}
 		};
 	}
-
-	//start (working) break stopped
 
 	angular
 		.module('app')

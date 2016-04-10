@@ -31,17 +31,17 @@
 					<div class="button half" id="start-button" ng-click="start()">Start Session</div>
 					<div class="button half float-right" id="break-button" ng-click="break()">Break</div>
 				</div>
-				<section class="images">
+				<div class="images">
 			<!-- <div ng-controller="ImageCtrl"> -->
 					<img id="Jan" class="done-pic" src="/assets/images/jansteen.png"/>
 					<img id="Parrot" class="done-pic" src="/assets/images/parrotportrait.png"/>
-					<p id="motivation">{{ motivation }}</p>
+					<p>{{ motivation }}</p>
 					<img id="Rembrandt" class="on-break-pic" src="/assets/images/rembrandt.png"/>
 					<img id="VanGogh" class="on-break-pic" src="/assets/images/vangogh.png"/>
 					<img id="Leyster" class="on-break-pic" src="/assets/images/judithleyster.png"/>
-					<p id="artist-quote">{{ quote }}</p>
+					<p>{{ quote }}</p>
 					<!-- </div> -->
-				</section>
+				</div>
 			</div>
 		</section>
 		<!-- move buttons in main timer ? for formatting-->
@@ -65,11 +65,10 @@
 
 	<!--Angular APP FILES-->
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/services/Tasks.js"></script>
     <script src="/scripts/controllers/StartCtrl.js"></script>
     <script src="/scripts/controllers/FaqCtrl.js"></script>
     <script src="/scripts/controllers/TimerCtrl.js"></script>
-    <!-- <script src="/scripts/controllers/ImageCtrl.js"></script> -->
-    <!-- <script src="/scripts/Tasks.js"></script> -->
     <script src="/scripts/filters/timecode.js"></script>
 </body>
 </html>

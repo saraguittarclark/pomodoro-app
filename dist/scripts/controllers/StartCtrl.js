@@ -1,12 +1,13 @@
 (function() {
-	function StartCtrl() {
+	function StartCtrl(Tasks, $scope) {
 		$('.timer').show();
-		// $('.container').css('background-color: #E1EAE3');
+	//tasks logic!
+
 	}
 
 	angular
 		.module('app')
-		.controller('StartCtrl', StartCtrl);
+		.controller('StartCtrl', ['Tasks', '$scope', StartCtrl]);
 })();
 
 // save text input somewhere 

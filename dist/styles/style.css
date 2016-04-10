@@ -145,7 +145,20 @@ a:hover {
 }
 
 /*Images - align center somehow*/
+.images {
+	width: 100%;
+	margin: 0 auto;
+}
 
+.images img {
+	width: 100%;
+}
+
+/*.white {
+	background-color: white;
+/*	display: block;
+	top: 50px;
+}*/
 
 /*FIX MEDIA QUERIES*/
 @media (max-width: 800px) {
@@ -180,6 +193,11 @@ a:hover {
 
 	.choice a {
 		float: right;
+	}
+
+	.button {
+		/*margin-top: 10px;*/
+		margin-bottom: 10px;
 	}
 }
 
