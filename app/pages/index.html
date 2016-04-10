@@ -7,6 +7,8 @@
     <link href='https://fonts.googleapis.com/css?family=Bangers|Open+Sans' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="/styles/style.css"/>
     <link rel="icon" type="image/png" href="/assets/images/three.png"/>
+    	<!-- Buzz -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.0/buzz.min.js"></script>
 </head>
 <body class="tall">
 	<div class="container">
@@ -27,7 +29,7 @@
 		<section class="timer">
 			<div ng-controller="TimerCtrl">
 				<div id="main-timer">
-					<p id="timer-time">{{ time | timecode }}</p>
+					<p id="timer-time" ng-model="timer">{{ time | timecode }}</p>
 					<div class="button half" id="start-button" ng-click="start()">Start Session</div>
 					<div class="button half float-right" id="break-button" ng-click="break()">Break</div>
 				</div>
@@ -62,6 +64,7 @@
 	<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
 	<!-- AngularFire -->
 	<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+
 
 	<!--Angular APP FILES-->
     <script src="/scripts/app.js"></script>

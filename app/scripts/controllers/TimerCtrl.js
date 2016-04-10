@@ -29,7 +29,6 @@
 			"Hooray!",
 			"Great Job!"
 		];
-			//two-way bind images instead?
 
 		picturesDone.hide(); // hide all pictures on load
 		picturesBreak.hide(); // hide all pictures on load
@@ -42,6 +41,10 @@
 
 		var countdown = null;
 
+		var mySound = new buzz.sound("/assets/sounds/dingaling.mp3", {
+  			preload: true
+		});
+
 		/** 
 		@function Start
 		@desc if countdown is not active, do nothing OR decrement time with interval
@@ -53,6 +56,7 @@
 			$scope.time--;
 			if ($scope.time === 0) {
 				$scope.stop();
+				mySound.play();
 
 				if(onBreak) {
 					//break just ended
@@ -73,15 +77,10 @@
 
 					doneImageIndex++;
 
-					console.log(doneImageIndex);
-
 					if (doneImageIndex >= picturesDone.length) {
 						doneImageIndex = 0;
 					};
-
-
 				}
-
 			};
 		}
 
