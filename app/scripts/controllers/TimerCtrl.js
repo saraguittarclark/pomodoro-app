@@ -1,9 +1,9 @@
 (function() {
 	function TimerCtrl($scope, $interval, $filter) {
 
-		var regularTimer = 60 * .1; // 60s * 25m
-		var shortBreakTimer = 60 * .1; // 60s * 5m
-		var longBreakTimer = 60 * .2; // 60s * 30 m
+		var regularTimer = 60 * 25; // 60s * 25m
+		var shortBreakTimer = 60 * 5; // 60s * 5m
+		var longBreakTimer = 60 * 30; // 60s * 30 m
 		var pomodorosPerLongBreak = 4; //4
 
 		var motivation = "";

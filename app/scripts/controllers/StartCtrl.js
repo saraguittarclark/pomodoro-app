@@ -1,13 +1,13 @@
 (function() {
 	function StartCtrl(Tasks, $scope) {
 		$('.timer').show();
-	//tasks logic!
-
+		$scope.tasksArray = Tasks.tasksArray;
+		$scope.add = function() {
+			//something
+		}
 	}
 
 	angular
 		.module('app')
 		.controller('StartCtrl', ['Tasks', '$scope', StartCtrl]);
 })();
-
-// save text input somewhere 
