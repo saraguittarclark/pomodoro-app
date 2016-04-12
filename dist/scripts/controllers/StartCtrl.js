@@ -1,13 +1,18 @@
 (function() {
-	function StartCtrl(Tasks, $scope) {
+	function StartCtrl(Tasks) {
 		$('.timer').show();
-		$scope.tasksArray = Tasks.tasksArray;
-		$scope.add = function() {
-			//something
-		}
+
+		this.tasks = Tasks.all;
+		this.addTask = function () {
+			Tasks.add(this.task);
+			this.task = "";
+		}.bind(this);
 	}
 
 	angular
 		.module('app')
-		.controller('StartCtrl', ['Tasks', '$scope', StartCtrl]);
+		.controller('StartCtrl', ['Tasks', StartCtrl]);
 })();
+
+
+//tasks not displaying, but seems to be working

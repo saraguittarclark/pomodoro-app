@@ -2,21 +2,18 @@
 	function Tasks($firebaseArray) {
 		var firebaseRef = new Firebase("https://get-it-done-timer.firebaseio.com/");
 
-		//download tasks to synchronized array
 		var tasksArray = $firebaseArray(firebaseRef);
-
-		console.log(tasksArray);
-
-		// var taskList = firebaseRef.limitToLast(25);
 
 		return {
 			all: tasksArray,
+			//
 			add: function(task) {
-				console.log('#');
-				tasksArray.$add(task);
+				tasksArray.$add({
+					text: task
+				});
+				console.log(task);
+				console.log(tasksArray)
 			}
-			//filter?? task back
-			/*remove: function () {}*/
 		};
 	}
 
