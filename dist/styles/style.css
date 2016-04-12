@@ -21,7 +21,7 @@ html, body {
 
 .tall {
 	height: 100%;
-	width: 70%;
+	width: 90%;
 	margin: 0 auto;
 }
 
@@ -105,6 +105,12 @@ a:hover {
 	padding-right: 10px;
 }
 
+#task-list li {
+	font-family: 'Open Sans', sans-serif;
+	list-style: none;
+}
+
+
 /*Timer && buttons*/
 .timer {
 	margin: 0 auto;
@@ -117,21 +123,39 @@ a:hover {
 	border-radius: 5px;
 	display: inline-block;
 	font-size: .75rem;
-	padding: 1rem;
+	padding: .75rem;
 	margin-top: .5rem;
 	text-align: center;
 }
 
-.add-button {
+.add-task {
+	float: right;
+	margin-top: 0;
+	width: 20%;
+}
+
+/*.add-button {
 	background-color: white;
 	border-radius: 5px;
 	font-size: .75rem;
 	padding: .5em;
 	text-align: center;
-}
+}*/
 
 .timer .button {
 	display: inline-block;
+}
+
+/*INPUT*/
+input {
+    width: 78%;
+    padding: 12px 20px;
+    margin: 0;
+    display: inline-block;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 /*Progress color*/
@@ -151,17 +175,28 @@ a:hover {
 }
 
 .images img {
-	width: 100%;
+	padding-left: 10%;
+	padding-right: 10%;
+	width: 80%;
 }
 
-/*.white {
-	background-color: white;
-/*	display: block;
-	top: 50px;
-}*/
+.padding {
+	padding-left: 10%;
+}
 
-/*FIX MEDIA QUERIES*/
+
+/*MEDIA QUERIES*/
+@media (max-width: 660px) {
+	.add-task span {
+		display: none;
+	}
+}
+
 @media (max-width: 800px) {
+	.tall {
+		width: 100%;
+	}
+
 	.half {
 		display: block;
 		width: 100%;
@@ -191,13 +226,29 @@ a:hover {
 		padding: 1em;
 	}
 
-	.choice a {
-		float: right;
-	}
-
 	.button {
 		/*margin-top: 10px;*/
 		margin-bottom: 10px;
+	}
+
+	.images img {
+		padding-left: 0;
+		padding-right: 0;
+		width: 100%;
+	}
+
+	.padding {
+		padding-left: 10%;
+	}
+}
+
+@media (min-width: 750px) {
+	input {
+		width: 55%;
+	}
+
+	.add-task {
+		width: 20%
 	}
 }
 

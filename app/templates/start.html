@@ -2,15 +2,15 @@
 <div class="choice">
 	<form>
 		<p>I am working on: <input type="text" ng-model="start.task" name="task" type="text" placeholder="building a timer"></input>
-		<a href="" class="add-button float-right" ng-click="start.addTask()">Add Task</a>
+		<a href="" class="add-task button" ng-click="start.addTask()">Add <span>Task<span></a>
 		</p> 
+		
 	</form>
 	<hr>
-		<p>My current task is ... {{ task }}</p>
-	<hr>
 	<div>
+		<h4>I have completed...</h4>
 		<ul id="task-list">
-			 <li ng-repeat="task in start.tasks">
+			 <li ng-repeat="task in start.tasks | orderBy: '+':true">
 			  	{{ task.text }}
 			 </li>
 		</ul>
