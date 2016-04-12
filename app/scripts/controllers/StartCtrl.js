@@ -1,12 +1,18 @@
 (function() {
-	function StartCtrl() {
+	function StartCtrl(Tasks) {
 		$('.timer').show();
-		// $('.container').css('background-color: #E1EAE3');
+
+		this.tasks = Tasks.all;
+		this.addTask = function () {
+			Tasks.add(this.task);
+			this.task = "";
+		}.bind(this);
 	}
 
 	angular
 		.module('app')
-		.controller('StartCtrl', StartCtrl);
+		.controller('StartCtrl', ['Tasks', StartCtrl]);
 })();
 
-// save text input somewhere 
+
+//tasks not displaying, but seems to be working

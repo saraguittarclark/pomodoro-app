@@ -1,22 +1,58 @@
+
+/*Fonts*/
 h1 {
 	font-family: 'Bangers', cursive;
 	font-size: 3rem;
-	padding-bottom: 1rem;
 }
 
 h2, h3, h4, h5, h6, p, a, .button {
 	font-family: 'Open Sans', sans-serif;
 }
 
+/*Backgrounds*/
+
 html {
 	background-color: #F9F9F9;
 }
 
-.container {
-	width: 800px;
-	position: relative;
+html, body {
+	height: 100%;
+}
+
+.tall {
+	height: 100%;
+	width: 70%;
 	margin: 0 auto;
 }
+
+.container {
+	background-color: #E1EAE3;
+	min-height: 100%;
+	padding: 1rem;
+}
+
+.onBreak {
+	background-color: #E9D8D6;
+}
+
+.finished {
+	background-color: #CDCED9;
+}
+
+.half {
+	display: inline-block;
+	width: 48%;
+}
+
+.choice {
+	height: 100%;
+}
+
+.float-right {
+	float: right;
+}
+
+/*Links*/
 
 a {
 	color: #555555;
@@ -27,43 +63,143 @@ a:hover {
 	color: #000000;
 }
 
-.footer {
-	margin: 1rem;
-}
+/*Timer*/
 
 #main-timer {
-	background-color: white;
-	border-radius: 5px;
-	padding: 1rem;
+	margin: 0 auto;
 	margin-bottom: 10px;
 }
 
-.choice {
-	padding-top: 10px;
+#timer-time {
+	background-color: white;
+	border-radius: 5px;
+	margin: 0 auto;
+	padding: 1rem;
+	font-size: 2rem;
+	text-align: center;
 }
+
+/*start input padding*/
+
+.choice {
+	margin: 0 auto;
+	padding-top: 10px;
+	width: 80%;
+}
+
+/*.choice p {
+	text-align: center;
+}*/
+
+/*Nav buttons*/
 
 .navigation ul {
 	margin-left: 0;
 	padding-left: 0;
-	float: right;
+/*	float: right;*/
 }
 
 .navigation li {
 	display: inline-block;
 	list-style: none;
+	padding-right: 10px;
 }
 
-#mid-li {
-	padding-left: 1rem;
-	padding-right: 1rem;
+/*Timer && buttons*/
+.timer {
+	margin: 0 auto;
+	width: 80%;
 }
-
 
 .button {
 	background-color: white;
+	box-sizing: border-box;
 	border-radius: 5px;
+	display: inline-block;
+	font-size: .75rem;
 	padding: 1rem;
-	margin-right: .5rem;
 	margin-top: .5rem;
-	width: 100px;
+	text-align: center;
 }
+
+.add-button {
+	background-color: white;
+	border-radius: 5px;
+	font-size: .75rem;
+	padding: .5em;
+	text-align: center;
+}
+
+.timer .button {
+	display: inline-block;
+}
+
+/*Progress color*/
+.progress {
+	background-color: #F8EFD7;
+} 
+
+/*break color*/
+.break {
+	background-color: #E9D8D6;
+}
+
+/*Images - align center somehow*/
+.images {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.images img {
+	width: 100%;
+}
+
+/*.white {
+	background-color: white;
+/*	display: block;
+	top: 50px;
+}*/
+
+/*FIX MEDIA QUERIES*/
+@media (max-width: 800px) {
+	.half {
+		display: block;
+		width: 100%;
+	}
+
+	h1 {
+		margin-bottom: .5rem;
+	}
+
+	.float-right {
+		display: block;
+		float: left;
+		padding-left: 0;
+		margin-top: 0;
+	}
+
+	.navigation {
+		display: block;
+	}
+
+	.timer {
+		margin: 0 auto;
+		margin-top: 3em;
+	}
+
+	#timer-time {
+		padding: 1em;
+	}
+
+	.choice a {
+		float: right;
+	}
+
+	.button {
+		/*margin-top: 10px;*/
+		margin-bottom: 10px;
+	}
+}
+
+
+

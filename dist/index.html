@@ -7,28 +7,47 @@
     <link href='https://fonts.googleapis.com/css?family=Bangers|Open+Sans' rel='stylesheet' type='text/css'/>
     <link rel="stylesheet" href="/styles/style.css"/>
     <link rel="icon" type="image/png" href="/assets/images/three.png"/>
+    	<!-- Buzz -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.1.0/buzz.min.js"></script>
 </head>
-<body class="container">
-	<section class="navigation">
-		<ul class>
-			<li><a ui-sref="start">Get Working!</a></li>
-			<li><a ui-sref="break" id="mid-li">Break</a></li>
-			<li><a ui-sref="faq">FAQ</a>
-		</ul>
-	</section>
-
-	<h1>Get It Done</h1>
-	
-	<section class="timer" ng-controller="TimerCtrl">
-		<div id="main-timer">
-			<p>{{ time | timecode }}</p>
+<body class="tall">
+	<div class="container">
+		<div class="half">
+			<h1>Get It Done</h1>
 		</div>
-		<div class="button" id="start-button" ng-click="start()">Start</div>
-		<div class="button" id="reset-button" ng-click="reset()">Reset</div>
 
-	</section>
+		<div class="half">
+			<ul class="navigation float-right">
+				<li><a ui-sref="start">Get Working</a></li>
+				<li><a ui-sref="faq">FAQ</a></li>
+			</ul>
+		</div><!--/half-->
 
-	<ui-view></ui-view>
+		<section class="timer">
+			<div ng-controller="TimerCtrl">
+				<div id="main-timer">
+					<p id="timer-time" ng-model="timer">{{ time | timecode }}</p>
+					<div class="button half" id="start-button" ng-click="start()">Start Session</div>
+					<div class="button half float-right" id="break-button" ng-click="break()">Break</div>
+				</div>
+				<div class="images">
+			<!-- <div ng-controller="ImageCtrl"> -->
+					<img id="Jan" class="done-pic" src="/assets/images/jansteen.png"/>
+					<img id="Parrot" class="done-pic" src="/assets/images/parrotportrait.png"/>
+					<p>{{ motivation }}</p>
+					<img id="Rembrandt" class="on-break-pic" src="/assets/images/rembrandt.png"/>
+					<img id="VanGogh" class="on-break-pic" src="/assets/images/vangogh.png"/>
+					<img id="Leyster" class="on-break-pic" src="/assets/images/judithleyster.png"/>
+					<p>{{ quote }}</p>
+					<!-- </div> -->
+				</div>
+			</div>
+		</section>
+		<!-- move buttons in main timer ? for formatting-->
+
+		<ui-view></ui-view>
+
+	</div><!--/container-->
 
 	<!--JQuery-->
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -41,8 +60,10 @@
 	<!-- AngularFire -->
 	<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
 
+
 	<!--Angular APP FILES-->
     <script src="/scripts/app.js"></script>
+    <script src="/scripts/services/Tasks.js"></script>
     <script src="/scripts/controllers/StartCtrl.js"></script>
     <script src="/scripts/controllers/FaqCtrl.js"></script>
     <script src="/scripts/controllers/TimerCtrl.js"></script>
