@@ -14,5 +14,3 @@
 		.controller('StartCtrl', ['Tasks', StartCtrl]);
 })();
 
-
-//tasks not displaying, but seems to be working
